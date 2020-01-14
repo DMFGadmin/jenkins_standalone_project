@@ -2,7 +2,7 @@
 resource "google_project" "standalone_project" {
   name            = "afrl-jenkins-cicd-001"
   project_id      = "afrl-jenkins-cicd-001"
-  org_id          = var.folder_id
+  folder_id         = var.folder_id
   billing_account = var.billing_account_id
   auto_create_network = false
 }
