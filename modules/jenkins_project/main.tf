@@ -4,7 +4,6 @@ resource "google_project" "standalone_project" {
   project_id      = "afrl-jenkins-cicd-001"
   folder_id         = var.folder_id
   billing_account = var.billing_account_id
-  auto_create_network = false
 }
 
 resource "google_project_service" "standalone_project" {
