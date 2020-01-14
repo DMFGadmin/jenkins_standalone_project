@@ -1,7 +1,7 @@
 # A project which will not use the VPC
 resource "google_project" "standalone_project" {
-  name            = "afrl-jenkins-001"
-  project_id      = "afrl-jenkins-001"
+  name            = "afrl-jenkins-cicd-001"
+  project_id      = "afrl-jenkins-cicd-001"
   org_id          = var.folder_id
   billing_account = var.billing_account_id
   auto_create_network = false
