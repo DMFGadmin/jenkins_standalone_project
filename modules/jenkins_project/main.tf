@@ -1,7 +1,7 @@
 # A project which will not use the VPC
 resource "google_project" "standalone_project" {
-  name            = "afrl-jenkins-cicd-002"
-  project_id      = "afrl-jenkins-cicd-002"
+  name            = "afrl-jenkins-cicd-01"
+  project_id      = "afrl-jenkins-cicd-01"
   folder_id         = var.folder_id
   billing_account = var.billing_account_id
 }
@@ -21,7 +21,7 @@ resource "google_compute_network" "standalone_network" {
 
 resource "google_compute_subnetwork" "afrl-jenkins-subnet" {
   project = google_project.standalone_project.name
-  name = "afrl-jenkins-subnet-001"
+  name = "afrl-jenkins-subnet-01"
   network = google_compute_network.standalone_network.name
   region = "us-central1"
   description = "standalone network for jenkins project"
