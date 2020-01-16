@@ -6,6 +6,13 @@ resource "google_project" "standalone_project" {
   billing_account = var.billing_account_id
 }
 
+resource "google_project" "monitoring_project" {
+  name            = "afrl-monitoring-01"
+  project_id      = "afrl-monitoring-01"
+  folder_id         = var.folder_id
+  billing_account = var.billing_account_id
+}
+
 resource "google_project_service" "standalone_project" {
   project = google_project.standalone_project.project_id
   service = "compute.googleapis.com"
