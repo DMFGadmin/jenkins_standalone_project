@@ -60,7 +60,7 @@ resource "google_compute_subnetwork" "afrl-jenkins-subnet" {
 resource "google_compute_firewall" "allow-traffic-from-shared-host" {
   name = "allow-traffic-from-shared-vpc-host"
   description = "Allow shared-vpc-host-traffic"
-  network =   google_compute_network.standalone_network.name
+  network =   google_compute_network.standalone_network.self_link
   direction = "INGRESS"
   project = google_project.standalone_project.id
   disabled = "false"
