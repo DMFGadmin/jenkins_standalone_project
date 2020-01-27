@@ -62,7 +62,7 @@ resource "google_compute_firewall" "allow-traffic-from-shared-host" {
   description = "Allow shared-vpc-host-traffic"
   network =   google_compute_network.standalone_network.self_link
   direction = "INGRESS"
-  project = google_project.standalone_project.id
+  project = google_project.standalone_project.project_id
   disabled = "false"
   priority = 1000
   enable_logging = "true"
