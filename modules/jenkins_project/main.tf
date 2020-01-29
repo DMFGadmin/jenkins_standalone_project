@@ -73,3 +73,10 @@ resource "google_compute_firewall" "allow-traffic-from-shared-host" {
 
   source_ranges = ["${data.terraform_remote_state.shared-vpc-info.outputs.afrl-shared-vpc-subnet-cidr_block}"]
 }
+
+resource "google_resource_manager_lien" "jenkins_project_lien" {
+  parent       = "projects/${google_project.standalone_project.project_id}"
+  restrictions = ["resourcemanager.projects.delete"]
+  origin       = "lien-applied-via-terraform"
+  reason       = "Prevent Accidental deletion of jenkins project and resources"
+}
